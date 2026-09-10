@@ -1,0 +1,4 @@
+interface:
+  display_name: "setup-franco-skills"
+  short_description: "Preparación y entrevista para la clase de SDD"
+  default_prompt: "Usá $setup-franco-skills para ayudarme con esta práctica de SDD."

@@ -7,17 +7,29 @@ from install_skills import install
 class InstallerTests(unittest.TestCase):
     def test_dry_run_leaves_project_untouched(self):
         with tempfile.TemporaryDirectory() as tmp:
-            self.assertEqual(len(install(tmp,'codex')),10)
+            self.assertEqual(len(install(tmp,'codex')),9)
             self.assertEqual(list(Path(tmp).iterdir()),[])
 
     def test_installs_complete_skills_for_both_agents(self):
         for agent,config in [('codex','.agents'),('claude','.claude')]:
             with self.subTest(agent=agent), tempfile.TemporaryDirectory() as tmp:
                 installed = install(tmp,agent,True)
-                self.assertEqual(len(installed),10)
+                self.assertEqual(len(installed),9)
                 skill = Path(tmp)/config/'skills/no-tecnico'
                 self.assertTrue((skill/'references/ejemplo-tutorias.md').is_file())
+                self.assertTrue((skill/'references/ejemplo-habitos.md').is_file())
                 self.assertTrue((skill/'agents/openai.yaml').is_file())
+
+    def test_reinstall_is_idempotent_and_tdd_is_explicit(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            install(tmp,'codex',True)
+            install(tmp,'codex',True)
+            base=Path(tmp)/'.agents/skills'
+            self.assertFalse((base/'tdd').exists())
+            self.assertFalse((base/'domain-modeling').exists())
+            install(tmp,'codex',True,True)
+            self.assertTrue((base/'tdd/SKILL.md').is_file())
+            self.assertEqual(len(list(base.iterdir())),10)
 
     def test_conflict_does_not_change_any_existing_file(self):
         with tempfile.TemporaryDirectory() as tmp:

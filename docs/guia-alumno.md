@@ -1,59 +1,44 @@
-# Guía del alumno
+# Preparar el proyecto y usar las skills
 
-La práctica en vivo de la sección 5 está en [demo-en-vivo/README.md](../demo-en-vivo/README.md): una web de hábitos, tres respaldos ejecutables y criterios A1–A5. El caso de tutorías que aparece más abajo es un ejercicio extendido separado.
+## Opción principal: un prompt para el agente
 
-## 1. Instalar las skills
+Creá o abrí una carpeta de práctica. Copiá el [prompt de setup Franco Skills](../prompts/setup-franco-skills.md) en el agente. Le pide descargar el repositorio y leer la skill de preparación. No hace falta instalar primero un comando global.
 
-Necesitás un agente que pueda leer archivos de tu proyecto. Para usar el instalador, Python 3. Abrí una terminal dentro de este kit y reemplazá `/ruta/a/tu-proyecto` por la carpeta real del proyecto.
+El agente conserva reglas existentes, instala las nueve skills base con todos sus recursos y prepara las plantillas Markdown. Para una copia privada del repo, hace falta una sesión de GitHub con acceso. Si usás el ZIP, indicá al agente dónde lo descomprimiste.
 
-Primero mirá qué se copiaría:
+## Alternativa manual
 
-```sh
-python3 scripts/install_skills.py --target /ruta/a/tu-proyecto --agent codex
-```
-
-Para copiar esas diez carpetas:
+Desde una copia descargada del kit, con Python 3 y una carpeta de proyecto ya creada:
 
 ```sh
-python3 scripts/install_skills.py --target /ruta/a/tu-proyecto --agent codex --apply
+python3 scripts/install_skills.py --target /ruta/a/mi-proyecto --agent codex
+python3 scripts/install_skills.py --target /ruta/a/mi-proyecto --agent codex --apply
 ```
 
-Codex: `.agents/skills/`. Claude Code: usá `--agent claude`, que copia en `.claude/skills/`. El instalador solo instala las skills; no modifica reglas existentes del proyecto. No instala en carpetas globales. Si hay una skill del mismo nombre, se detiene antes de copiar: revisá la versión que tenés y elegí cuál conservar. Podés practicar en una carpeta nueva para evitar duplicados.
+El primer comando simula; el segundo copia a `.agents/skills`. Para Claude Code, reemplazá `codex` por `claude`: usa `.claude/skills`. Repetir la instalación conserva las copias idénticas. Si una skill existente es diferente, no se sobreescribe ninguna.
 
-Sin Python, copiá las diez carpetas de `skills/` a la ubicación de tu agente, conservando cada `SKILL.md` y sus referencias. No combines a ciegas versiones distintas. Si no aparecen, reiniciá o abrí una sesión nueva. Verificá pidiéndole al agente que encuentre y lea `no-tecnico/SKILL.md`.
+Después pedí al agente que lea `setup-franco-skills/SKILL.md` para preparar las convenciones y plantillas. El instalador solo copia las skills; no modifica AGENTS.md por su cuenta.
 
-En Codex CLI/IDE se puede usar `$no-tecnico` o seleccionar con `/skills`; según la aplicación puede haber un selector de skills. En Claude Code, una skill local puede invocarse con `/no-tecnico`. Si tu agente no reconoce la sintaxis, pedile leer el archivo por su ruta. La barra es la forma de invocación; el nombre de la skill es `no-tecnico`.
+## La primera conversación
 
-Referencias: [skills en Codex](https://learn.chatgpt.com/docs/build-skills), [skills en Claude Code](https://code.claude.com/docs/en/skills).
+```text
+Usá no-tecnico junto con grill-with-docs. Quiero construir [mi idea]. No conozco arquitectura ni bases de datos. Preguntame cómo quiero que funcione y recomendá las piezas técnicas explicándome por qué hacen falta. Primero definamos el producto; no implementes todavía.
+```
 
-## 2. Preparar el proyecto
+La entrevista conserva decisiones. `to-spec` las sintetiza en un acuerdo; el plan propone cómo construirlo. `to-tickets` lo divide y `implement` resuelve el ticket elegido. `code-review` contrasta el cambio con lo acordado.
 
-En este kit ya existen `AGENTS.md`, `docs/agents/issue-tracker.md` y `docs/agents/domain.md`. Leelos con el agente. Si trabajás en otro proyecto, pedile usar `setup-matt-pocock-skills`: propone la configuración antes de escribir. Para el curso elegí tickets Markdown locales salvo que ya trabajes con otro sistema. No necesitás publicar issues para practicar.
+`grilling` es la entrevista que utiliza `grill-with-docs`. `grill-me` es una entrada breve a esa misma entrevista. No hace falta ejecutar las tres en secuencia. El vocabulario pequeño se guarda junto a las decisiones; domain-modeling no es una dependencia del curso.
 
-Las skills heredadas mencionan a veces herramientas específicas de un agente. El kit adapta la carga de skills y permite revisión secuencial cuando no hay subagentes. No todas las aplicaciones ofrecen las mismas funciones. `implement` incluye un commit local: pedí primero inicializar Git en una carpeta nueva, o indicá que todavía no querés commits. Ninguna skill habilita por sí misma subir archivos a servicios externos.
+## Cómo invocarlas
 
-## 3. Tu primera entrevista
+Podés escribir “Usá no-tecnico”. En Codex también se usa `$no-tecnico` o su selector de skills. La forma `/nombre` en la presentación es una abreviatura; cada agente puede exponer un selector o sintaxis distinta. Si no tiene herramienta de skills, pedile leer el SKILL.md correspondiente.
 
-> Usá no-tecnico junto con grill-with-docs. Quiero que mis alumnos reserven tutorías sin mandarme mensajes. No sé programación ni arquitectura. Preguntame por el uso y los límites; proponé la solución técnica y explicá qué hace cada pieza. Por ahora quiero definir la especificación, sin implementar.
+## SDD y TDD
 
-Si no sabés una respuesta, decilo. El agente debería recomendar y explicar, marcando sus supuestos. Revisá especialmente quién puede acceder, qué se guarda, qué pasa con errores y qué queda fuera.
+SDD conecta intención, documentos, implementación y evidencia. Verificar criterios no significa automáticamente usar TDD. TDD exige observar una prueba que falla antes de escribir la solución y luego mejorarla manteniendo la prueba.
 
-## 4. De la idea al primer ticket
+Si decidís practicar ese complemento, agregá `--with-tdd` al comando de instalación. De otro modo, el paquete base y las comprobaciones de los criterios son suficientes.
 
-> Usá to-spec para resumir nuestras decisiones. Separá la conducta que espero del plan técnico y dejá visibles las dudas pendientes.
+## La práctica de la clase
 
-> Usá to-tickets para proponer incrementos de punta a punta. El primero debe demostrar un comportamiento pequeño y tener criterios comprobables.
-
-> Usá implement con el primer ticket acordado. Explicame lo que construís y mostrame evidencia contra sus criterios.
-
-En el ejemplo del kit, `spec.md` es v1. `spec-v2.md` representa un cambio todavía por aplicar. No leas las dos como reglas simultáneas. El ticket 04 requiere adoptar primero la v2, actualizar `spec.md` y registrar la decisión. Los criterios de evidencia empiezan pendientes porque la aplicación no está implementada.
-
-## 5. Qué revisar
-
-- ¿La spec conserva lo que pediste y distingue supuestos de acuerdos?
-- ¿La propuesta técnica tiene una razón comprensible y respeta lo que ya existe?
-- ¿Podés mostrar un criterio satisfecho, incluido al menos un error relevante?
-- ¿Las pruebas representan la versión vigente de las reglas?
-- ¿Quedaron claros los costos por verificar y lo que no se probó?
-
-Entrega de la práctica: un usuario y problema, tres criterios, una exclusión, una propuesta técnica explicada y un ticket vertical. Para ampliar, construí ese ticket y registrá su evidencia.
+[Aplicación para gestionar hábitos](../demo-en-vivo/README.md): crear actividades, registrar cuándo se realizaron y calcular días consecutivos. La demo explica el vocabulario antes de usarlo y conserva tres respaldos ejecutables.

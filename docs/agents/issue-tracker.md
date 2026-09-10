@@ -1,9 +1,7 @@
-# Tracker: Markdown local
+# Tickets Markdown locales
 
-Una carpeta por funcionalidad: `.scratch/<feature>/`. Spec activa: `spec.md`; plan: `plan.md`; un archivo por ticket en `issues/NN-slug.md`, en orden de dependencias.
+En un proyecto nuevo de la clase usamos `specs/<proyecto>/spec.md`, `plan.md`, `tickets/NN-descripcion.md` y `evidencia.md`. Respetar una convención existente si ya se estableció.
 
-“Publicar” significa escribir un archivo local. No crear issues, mensajes ni PRs remotos. “Leer un ticket” significa abrir el archivo referido. Conservá comentarios bajo `## Comentarios` sin borrar el historial.
+Cada ticket declara qué resultado entrega, los criterios vinculados y qué tickets lo bloquean. Estados: borrador, listo, en curso y terminado. Escribir un ticket significa crear un archivo local; no publicar un issue remoto.
 
-Cada ticket incluye `Status:` y `Blocked by:`. Estados locales: draft (falta acuerdo), ready-for-agent (acordado y listo cuando sus bloqueos estén resueltos), in-progress, done. No hay skill de triage instalada; no hace falta configurar etiquetas de un servicio. Los tickets del ejemplo son borradores hasta que se acuerde implementarlos.
-
-La versión activa está en `spec.md`; los snapshots `spec-v1.md` y `spec-v2.md` sirven para enseñar el cambio. Solo hay una versión activa. No marcar done sin evidencia de los criterios.
+Los tickets preparados de `demo-en-vivo/issues/` conservan su ubicación como referencia. Solo hay una spec vigente por proyecto; los snapshots de otras versiones se identifican como referencia.

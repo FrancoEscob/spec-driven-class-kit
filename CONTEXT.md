@@ -1,15 +1,13 @@
-# Contexto de los ejercicios
+# Contexto del kit de la clase
 
-La práctica principal es **hábitos**, con vocabulario en [demo-en-vivo/CONTEXT.md](demo-en-vivo/CONTEXT.md). No mezclar sus reglas con las de tutorías.
+Este repositorio distribuye las skills de la clase y una aplicación de hábitos como práctica. Los proyectos nuevos se preparan con setup-franco-skills y conservan sus decisiones en `specs/<proyecto>/`.
 
-Los siguientes términos pertenecen únicamente al **ejercicio extendido de tutorías**:
+- **Spec:** acuerdo sobre el comportamiento y alcance de una versión.
+- **Plan:** propuesta técnica explicada para cumplir ese acuerdo.
+- **Ticket:** resultado pequeño que se puede construir y comprobar de principio a fin.
+- **Evidencia:** resultado realmente observado de una comprobación.
+- **Hábito:** actividad que se quiere repetir, por ejemplo leer 20 minutos.
+- **Cumplimiento o marca:** registro de que una actividad se realizó en un día.
+- **Racha:** días consecutivos de cumplimiento, según la regla de la spec.
 
-- **Turno:** intervalo futuro publicado por un docente, con un cupo en esta demo. No equivale a una reserva.
-- **Reserva:** vínculo persistente entre un alumno y un turno; puede estar activa o cancelada.
-- **Disponible:** turno futuro que no tiene una reserva activa y que el alumno puede solicitar sin superposición.
-- **Superposición:** dos intervalos comparten tiempo. Se usa inicio incluido y fin excluido; 18:00–18:30 y 18:30–19:00 no se superponen.
-- **Cancelación normal:** realizada al menos dos horas antes del inicio; el límite exacto está incluido.
-- **Cancelación tardía:** en v2, cancelación a menos de dos horas y antes del inicio. Libera el cupo y conserva una marca. No implica una sanción.
-- **Spec:** acuerdo de comportamiento y límites.
-- **Plan:** propuesta técnica para satisfacer el acuerdo.
-- **Evidencia:** resultado observado y registrado de una comprobación; un escenario escrito todavía no es evidencia ejecutada.
+El detalle del ejemplo está en [demo-en-vivo/CONTEXT.md](demo-en-vivo/CONTEXT.md). Las skills son reutilizables: no trasladar automáticamente las reglas de hábitos a otro producto.

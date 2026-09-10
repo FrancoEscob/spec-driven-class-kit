@@ -1,0 +1,4 @@
+interface:
+  display_name: "grill-me"
+  short_description: "Preparación y entrevista para la clase de SDD"
+  default_prompt: "Usá $grill-me para ayudarme con esta práctica de SDD."

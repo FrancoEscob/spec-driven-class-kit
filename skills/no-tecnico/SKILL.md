@@ -62,4 +62,4 @@ En la ubicación que use el proyecto, separá:
 
 No generes todos los documentos si la tarea solo pide una orientación breve. Para un proyecto pequeño pueden ser secciones de un mismo archivo, manteniendo la distinción entre necesidad y solución. En una sesión de grilling, cerrá la ronda con un resumen entendible de lo decidido y la siguiente duda relevante. Si siguen abiertas decisiones que bloquean implementación, no declares la especificación lista.
 
-Para un ejemplo de entrevista y propuesta, consultá [ejemplo-tutorias.md](references/ejemplo-tutorias.md). Es ilustrativo: no reutilices su stack ni sus reglas sin mirar la necesidad actual.
+Para una app local pequeña, consultá [ejemplo-habitos.md](references/ejemplo-habitos.md). Para un caso con datos compartidos, consultá [ejemplo-tutorias.md](references/ejemplo-tutorias.md). Son ilustrativos: no reutilices su stack ni sus reglas sin mirar la necesidad actual.

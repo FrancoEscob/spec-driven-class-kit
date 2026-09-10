@@ -5,9 +5,9 @@ description: Sintetizar una conversación ya clarificada en una especificación 
 
 # To spec · adaptación del curso
 
-Leé el contexto, el glosario y las decisiones ya presentes. Usá el tracker definido en `docs/agents/issue-tracker.md`; en el kit se trabaja con archivos locales. Sintetizá lo acordado: no reinicies una entrevista ni inventes respuestas para completar un documento.
+Leé el contexto, el glosario y las decisiones ya presentes. En este curso se trabaja con archivos Markdown locales, según las convenciones existentes del proyecto. Sintetizá lo acordado: no reinicies una entrevista ni inventes respuestas para completar un documento.
 
-Escribí la spec en `.scratch/<feature>/spec.md` si esa es la convención configurada. Incluí problema, personas, recorrido, reglas con identificadores, criterios observables, estados de error relevantes, exclusiones y dudas. Usá las historias necesarias para el alcance; no alargues la lista para aparentar exhaustividad. Si faltan decisiones bloqueantes, marcá la spec como borrador y describí qué necesita resolverse.
+Escribí la spec en `specs/<proyecto>/spec.md` si esa es la convención configurada. Incluí problema, personas, recorrido, reglas con identificadores, criterios observables, estados de error relevantes, exclusiones y dudas. Usá las historias necesarias para el alcance; no alargues la lista para aparentar exhaustividad. Si faltan decisiones bloqueantes, marcá la spec como borrador y describí qué necesita resolverse.
 
 Separá las propuestas de implementación en `plan.md` junto a la spec: arquitectura, datos, interfaces, riesgos y cómo se comprobarán los criterios. Vinculá desde la spec. Una restricción tecnológica genuina sí pertenece al acuerdo; distinguí esa restricción de una preferencia del agente.
 

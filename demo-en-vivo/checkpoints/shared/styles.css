@@ -1,8 +1,8 @@
 :root {
   font-family: system-ui, sans-serif;
-  color: #172643;
-  background: #f5efdf;
-  color-scheme: light;
+  color: #f2e6ca;
+  background: #0b1732;
+  color-scheme: dark;
 }
 * {
   box-sizing: border-box;
@@ -24,7 +24,7 @@ header a {
   font-size: 14px;
 }
 a {
-  color: #2459da;
+  color: #a4c4ff;
   text-underline-offset: 4px;
 }
 .wordmark {
@@ -46,7 +46,7 @@ main {
   font-size: 12px;
   letter-spacing: 1.5px;
   text-transform: uppercase;
-  color: #536078;
+  color: #aebbd1;
 }
 h1 {
   font:
@@ -60,7 +60,7 @@ p {
 }
 .intro {
   max-width: 650px;
-  color: #596477;
+  color: #aebbd1;
 }
 .controls {
   display: flex;
@@ -86,9 +86,9 @@ button {
 input {
   width: 100%;
   border: 1px solid #aab3c1;
-  background: #fcf9f1;
+  background: #12233f;
   padding: 11px;
-  color: #172643;
+  color: #f2e6ca;
 }
 button {
   cursor: pointer;
@@ -112,7 +112,7 @@ input:focus-visible {
   align-items: end;
   gap: 18px;
   padding: 20px;
-  background: #e6e5df;
+  background: #182d4a;
   flex-wrap: wrap;
 }
 .demo-controls[hidden] {
@@ -124,7 +124,7 @@ input:focus-visible {
 }
 .demo-controls p {
   margin: 0 0 4px;
-  color: #596477;
+  color: #aebbd1;
   font-size: 13px;
 }
 .demo-controls input {
@@ -132,23 +132,23 @@ input:focus-visible {
 }
 .secondary {
   background: transparent;
-  color: #2459da;
+  color: #a4c4ff;
 }
 .feedback {
   min-height: 28px;
   font-size: 15px;
-  color: #1e5079;
+  color: #a5cbff;
   margin: 18px 0;
   white-space: pre-line;
 }
 .feedback.error {
-  color: #9b3b1b;
+  color: #ffb291;
 }
 .list-heading {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-top: 1px solid #c4c5c1;
+  border-top: 1px solid #324966;
   padding-top: 25px;
 }
 .list-heading h2 {
@@ -157,7 +157,7 @@ input:focus-visible {
 }
 .list-heading span {
   font-size: 13px;
-  color: #596477;
+  color: #aebbd1;
 }
 ul {
   list-style: none;
@@ -168,7 +168,7 @@ ul {
   align-items: center;
   gap: 20px;
   padding: 24px 0;
-  border-bottom: 1px solid #cfcec6;
+  border-bottom: 1px solid #324966;
 }
 .habit-info {
   flex: 1;
@@ -183,12 +183,12 @@ ul {
   margin: 0;
 }
 .streak {
-  color: #2459da;
+  color: #a4c4ff;
   font-weight: 600;
 }
 .dates {
   font-size: 13px;
-  color: #596477;
+  color: #aebbd1;
   overflow-wrap: anywhere;
 }
 .habit-actions {
@@ -198,17 +198,17 @@ ul {
   justify-content: end;
 }
 .done {
-  background: #e2e9f6;
-  color: #2459da;
+  background: #1e3a62;
+  color: #a4c4ff;
   border-color: #a2b5d9;
 }
 .empty {
   padding: 30px 0;
-  color: #596477;
+  color: #aebbd1;
 }
 .instructions {
   margin: 35px 0;
-  background: #fcf9f1;
+  background: #12233f;
   border-left: 3px solid #ed883f;
   padding: 20px 24px;
 }
@@ -218,7 +218,7 @@ ul {
 }
 .instructions p {
   font-size: 14px;
-  color: #596477;
+  color: #aebbd1;
   margin: 8px 0;
 }
 .foot-actions {
@@ -232,14 +232,14 @@ ul {
   min-height: 38px;
   border: 0;
   background: none;
-  color: #536078;
+  color: #aebbd1;
   padding: 4px 0;
   text-decoration: underline;
 }
 footer {
   font-size: 13px;
-  color: #596477;
-  border-top: 1px solid #c4c5c1;
+  color: #aebbd1;
+  border-top: 1px solid #324966;
   padding: 20px 0;
   margin-top: 35px;
 }
