@@ -1,0 +1,4 @@
+interface:
+  display_name: "To spec · curso"
+  short_description: "Convertí acuerdos en criterios que se puedan comprobar"
+  default_prompt: "Usá $to-spec para sintetizar lo acordado en una spec y un plan separado."

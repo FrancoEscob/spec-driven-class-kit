@@ -1,0 +1,4 @@
+interface:
+  display_name: "No técnico"
+  short_description: "Definí tu producto y entendé cada decisión técnica"
+  default_prompt: "Usá $no-tecnico para ayudarme a especificar mi idea y recomendar la solución técnica explicándome cada decisión."
