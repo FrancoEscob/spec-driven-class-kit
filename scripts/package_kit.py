@@ -30,7 +30,7 @@ for entry in manifest['skills']:
 manifest_path.write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n')
 # Only these paths can enter the downloadable artifact.
 files = [root/name for name in ['README.md','AGENTS.md','CONTEXT.md','LICENSES.md','LICENSE-MATT-POCOCK','skills-manifest.json','.gitignore']]
-for directory in ['skills','docs','scripts','.scratch']:
+for directory in ['skills','docs','scripts','.scratch','demo-en-vivo']:
     files.extend(p for p in (root/directory).rglob('*') if p.is_file() and '__pycache__' not in p.parts and p.suffix != '.pyc')
 output.parent.mkdir(parents=True, exist_ok=True)
 with ZipFile(output,'w',ZIP_DEFLATED) as archive:

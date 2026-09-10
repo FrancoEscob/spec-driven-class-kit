@@ -1,6 +1,6 @@
 # Convenciones del kit de clase
 
-Este repositorio contiene material pedagógico, no una aplicación de tutorías ya construida. Respetá la fase que pida el alumno. Si pide especificar, no implementes por iniciativa propia.
+Este repositorio contiene material pedagógico: una demo de hábitos implementada y un ejercicio extendido de tutorías sin implementar. Identificá el ejercicio antes de leer su dominio. Respetá la fase que pida el alumno. Si pide especificar, no implementes por iniciativa propia.
 
 ## Agent skills
 

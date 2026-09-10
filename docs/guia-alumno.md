@@ -1,5 +1,7 @@
 # Guía del alumno
 
+La práctica en vivo de la sección 5 está en [demo-en-vivo/README.md](../demo-en-vivo/README.md): una web de hábitos, tres respaldos ejecutables y criterios A1–A5. El caso de tutorías que aparece más abajo es un ejercicio extendido separado.
+
 ## 1. Instalar las skills
 
 Necesitás un agente que pueda leer archivos de tu proyecto. Para usar el instalador, Python 3. Abrí una terminal dentro de este kit y reemplazá `/ruta/a/tu-proyecto` por la carpeta real del proyecto.

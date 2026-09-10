@@ -9,3 +9,8 @@ Decisión: distribuir diez skills y documentos de tutorías en un repositorio lo
 Alternativa: repositorio con una aplicación y stack cerrados. Facilita ejecutar una demo, pero oculta la decisión que esta clase quiere enseñar.
 
 Consecuencia: los escenarios de aceptación no son pruebas ejecutadas. Para completar el ejercicio se elige la solución, se construye y se registra evidencia. La web de la presentación tiene su propio proyecto y no es la app de reservas.
+
+
+## Ampliación del 10 de septiembre de 2026
+
+La sección 5 usa una web local de hábitos basada en la secuencia del video. `demo-en-vivo/` contiene código preparado y pruebas propias. Tutorías conserva su alcance documental como ejercicio extendido. El dominio de hábitos no hereda las reglas de reservas.

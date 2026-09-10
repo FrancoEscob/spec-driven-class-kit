@@ -1,4 +1,8 @@
-# Lenguaje del ejemplo
+# Contexto de los ejercicios
+
+La práctica principal es **hábitos**, con vocabulario en [demo-en-vivo/CONTEXT.md](demo-en-vivo/CONTEXT.md). No mezclar sus reglas con las de tutorías.
+
+Los siguientes términos pertenecen únicamente al **ejercicio extendido de tutorías**:
 
 - **Turno:** intervalo futuro publicado por un docente, con un cupo en esta demo. No equivale a una reserva.
 - **Reserva:** vínculo persistente entre un alumno y un turno; puede estar activa o cancelada.

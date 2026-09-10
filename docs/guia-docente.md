@@ -1,61 +1,562 @@
 # Guía del docente · Spec-Driven Development
 
-Edición 2026-09-10. Clase base: 100 minutos; extensión opcional: 20 minutos.
+Edición 2026-09-10. Clase: 100 minutos, con demo en vivo de 35 minutos incluida. Noticias: sesión independiente de 8–10 minutos.
 
-- El nuevo contexto: 12 minutos.
-- Del impulso a la intención: 10 minutos.
-- El método SDD: 18 minutos.
-- Tu caja de herramientas: 18 minutos.
-- Una idea, de punta a punta: 27 minutos.
-- Practicar y comprobar: 15 minutos.
+- El punto de partida: 10 minutos.
+- Entender SDD: 12 minutos.
+- Preparar el proyecto: 15 minutos.
+- Usar las skills: 18 minutos.
+- Demo en vivo: 35 minutos.
+- Cerrar y continuar: 10 minutos.
 
-## 01 · De una idea a software con intención.
+## 01 · De vibe coding a software con intención.
 
-Spec-Driven Development: aprendé a pedir, decidir y comprobar lo que construye un agente. Sin necesitar saber arquitectura.
+Aprendé a transformar una idea en una especificación, guiar al agente y comprobar lo que construyó. Un método que podés repetir en tu próximo proyecto.
 
-**Explicación:** Presentá el resultado de la clase: cada alumno podrá transformar una idea en una especificación, entender una propuesta técnica y reconocer si la implementación cumple. Usaremos un único caso, la reserva de tutorías. La sesión base dura 100 minutos; puede extenderse a 120 con práctica adicional.
+**Explicación:** Abrí la clase con una promesa concreta: completar un ciclo de SDD sobre una aplicación pequeña. El contenido se basa en la transcripción de MoureDev; adaptamos su CLI de hábitos a una web local y sus prompts a nuestro paquete de skills. El bloque de noticias de Astra es independiente y opcional. No se requiere ese modelo para seguir la clase.
 
-**Ejemplo:** “Quiero una app de turnos” suena claro hasta que dos personas intentan reservar el mismo horario. El trabajo de dirección empieza al hacer visible esa situación.
+**Ejemplo:** El resultado de la práctica será crear “Leer 20 minutos”, marcarlo por hoy, recargar y verificar que conserva el registro.
 
-**Pregunta al grupo:** ¿Alguna vez la IA les entregó algo que funcionaba, pero no era lo que querían?
+**Pregunta al grupo:** ¿Qué proyecto te gustaría poder retomar dentro de un mes sin depender del historial de un chat?
 
-**Transición:** Antes del método, separemos qué aporta el modelo y qué aporta el entorno en el que trabaja.
+**Transición:** Primero vamos a ubicar qué hace el alumno y qué le podemos pedir a la IA.
 
-**Idea clave:** La IA produce. Vos decidís qué significa que funcione.
+**Idea clave:** El objetivo de hoy: que puedas explicar qué pediste, qué decidió el agente y cómo lo verificaste.
+
+- [Video de referencia · Introducción](https://www.youtube.com/watch?v=5HaOxAAA5qI&t=0s)
+
+## 02 · La IA escribe. Vos dirigís el trabajo.
+
+Tu aporte es explicar el problema, revisar las decisiones y comprobar resultados. No necesitás elegir una base de datos antes de saber qué querés guardar.
+
+**Explicación:** El video insiste en la participación humana a lo largo del proceso. Para esta audiencia, esa participación empieza por el uso y las consecuencias. No se enseña a aprobar pantallas sin entender, ni se exige que los alumnos sean arquitectos.
+
+**Ejemplo:** No necesitás programar el almacenamiento para pedir: “Al cerrar y abrir la página, quiero seguir viendo mis hábitos”.
+
+**Pregunta al grupo:** ¿Qué resultado podrías revisar vos sin leer código?
+
+**Transición:** Veamos cuándo alcanza con explorar y cuándo hace falta conservar un acuerdo.
+
+**Idea clave:** Comprender una decisión no es lo mismo que saber programarla.
 
 
 
-## 02 · Más capacidad. Más criterio.
+## 03 · Explorar está bien. Perder el acuerdo, no.
+
+Vibe coding describe aquí una forma de avanzar por conversación, prueba y corrección, sin conservar necesariamente una definición verificable de lo que se quería construir.
+
+**Explicación:** Tomá del video la distinción entre prototipos y software mantenido, sin repetir afirmaciones absolutas sobre empleo o sobre que todo prototipo está mal. Una exploración puede convertirse en producto: ahí cambia la inversión necesaria en reglas y verificación.
+
+**Ejemplo:** Para probar el diseño de una lista de hábitos alcanza una maqueta. Para conservar el progreso de alguien durante meses necesitamos definir qué significa marcar, repetir y cambiar de día.
+
+**Pregunta al grupo:** ¿Cómo te darías cuenta de que tu prototipo ya necesita otra forma de trabajo?
+
+**Transición:** El nivel de rigor depende del costo de equivocarnos.
+
+**Idea clave:** Usar IA para programar no significa necesariamente hacer vibe coding.
+
+- [Video de referencia · Vibe coding](https://www.youtube.com/watch?v=5HaOxAAA5qI&t=1316s)
+
+## 04 · El rigor se elige. No se acumula.
+
+El costo del error crece hacia arriba. La vida útil crece hacia la derecha. Un proyecto breve también puede requerir controles fuertes.
+
+**Explicación:** Leé los ejes antes de los cuadrantes. Es una guía de discusión, no una taxonomía rígida. Vibe coding aquí nombra una práctica exploratoria sin conservar necesariamente una definición verificable; usar IA para programar no implica trabajar así.
+
+**Ejemplo:** Un mockup descartable y un script que borra datos pueden llevar una hora cada uno. Su necesidad de rigor es muy distinta.
+
+**Pregunta al grupo:** ¿Dónde pondrían una página personal? ¿Y una importación única de las notas de alumnos?
+
+**Transición:** Cuando la intención debe durar, una especificación nos da una referencia común.
+
+**Idea clave:** La duración no decide sola: mirá consecuencias, colaboración y reversibilidad.
+
+
+
+## 05 · El ciclo de siempre. Con un agente al lado.
+
+SDD conserva las preguntas del desarrollo de software. Los documentos hacen que humanos y agentes puedan trabajar con el mismo acuerdo.
+
+**Explicación:** El video establece esta equivalencia antes de entrar en la práctica. Leé el esquema de arriba hacia abajo y después señalá el retorno. No presentes planificación y constitución como sinónimos exactos: una define propósito y otra conserva reglas estables.
+
+**Ejemplo:** “Registrar hábitos” es una necesidad. “No duplicar la marca de hoy” es un requisito. “Guardarlo localmente” es una decisión del plan para esta demo.
+
+**Pregunta al grupo:** ¿En qué paso decidirías qué debe pasar si se marca dos veces?
+
+**Transición:** Ahora ubiquemos el acuerdo que conecta esos pasos.
+
+**Idea clave:** El agente acelera la ejecución. Las preguntas siguen siendo necesarias.
+
+- [Video de referencia · Ciclo clásico](https://www.youtube.com/watch?v=5HaOxAAA5qI&t=949s)
+
+## 06 · Una referencia para todo el ciclo.
+
+La especificación expresa qué queremos construir y por qué. Sirve para discutir, planear y verificar, incluso cuando la conversación ya terminó.
+
+**Explicación:** Seguí el orden del video: una primera spec puede llevar a una nueva clarificación. En nuestro flujo, grill-with-docs también aclara antes de sintetizar. No son pasos incompatibles: la conversación y el documento se refinan hasta tener suficiente claridad.
+
+**Ejemplo:** Si “racha” significa algo distinto para dos personas, lo aclaramos antes de implementar su cálculo. Si lo descubrimos después, revisamos la regla y su impacto.
+
+**Pregunta al grupo:** ¿Por qué una spec es más útil que un prompt largo perdido en una conversación?
+
+**Transición:** Hay distintas formas de conservar esa relación después de escribir código.
+
+**Idea clave:** La spec no garantiza acierto: permite detectar y discutir diferencias.
+
+- [Video de referencia · Flujo práctico](https://www.youtube.com/watch?v=5HaOxAAA5qI&t=2799s)
+
+## 07 · Tres destinos para una especificación.
+
+Usamos esta distinción como vocabulario del curso. No son certificaciones ni un estándar universal de madurez.
+
+**Explicación:** Estos términos describen relaciones posibles con la especificación. No presentes spec-as-source como una garantía de regenerar cualquier aplicación sin intervención. En anchored sigue haciendo falta criterio humano para detectar contradicciones.
+
+**Ejemplo:** En una app de hábitos, spec-first sirve de inicio; anchored conserva la regla de rachas mientras la app evoluciona; as-source pretende generar desde una especificación con un proceso que lo sostenga.
+
+**Pregunta al grupo:** ¿Qué documento o evidencia consultarían si el código y la spec dicen cosas distintas?
+
+**Transición:** Para practicar anchored, empecemos por preparar las reglas del proyecto.
+
+**Idea clave:** En esta clase practicamos spec-anchored: mantener intención y comportamiento alineados.
+
+- [Video de referencia · Tres tipos de SDD](https://www.youtube.com/watch?v=5HaOxAAA5qI&t=1572s)
+
+## 08 · Reglas estables. Un punto de partida claro.
+
+AGENTS.md indica cómo trabajar en este proyecto. La constitución reúne principios que deberían respetar todas sus funcionalidades. Pueden ser secciones de un documento pequeño.
+
+**Explicación:** En el video aparecen AGENTS.md y constitution.md. Evitá convertir sus nombres en una obligación universal: importa el propósito. Si el agente usa CLAUDE.md u otro punto de entrada, hacé referencia a una sola fuente de reglas para evitar copias divergentes.
+
+**Ejemplo:** “Mensajes en español” afecta toda la app. “No duplicar un hábito de igual nombre” pertenece a la funcionalidad de crear hábitos.
+
+**Pregunta al grupo:** ¿Dónde guardarías “no agregar dependencias sin una razón concreta”?
+
+**Transición:** Cada documento debería contestar una pregunta reconocible.
+
+**Idea clave:** Las reglas estables viven aparte de los detalles de una funcionalidad.
+
+- [Video de referencia · Setup y constitución](https://www.youtube.com/watch?v=5HaOxAAA5qI&t=3358s)
+
+## 09 · Un archivo. Una pregunta.
+
+Los nombres ayudan a orientarse; el valor está en la decisión que conserva cada archivo. No hace falta crear documentos vacíos para seguir un ritual.
+
+**Explicación:** Mostrá un árbol real del kit. En el video se usa tasks.md; nuestras skills usan un archivo por ticket en issues. Explicá esta diferencia explícitamente para que el alumno no espere encontrar ambos sistemas.
+
+**Ejemplo:** Un ticket para marcar un hábito refiere a la regla de “una marca por día” de la spec. No tiene que reescribir toda la especificación.
+
+**Pregunta al grupo:** ¿Qué archivo abrirías para entender por qué elegimos guardar solo en este navegador?
+
+**Transición:** Vamos a escribir una regla que otra persona pueda verificar.
+
+**Idea clave:** Los archivos se relacionan; no repiten la misma información.
+
+
+
+## 10 · De “una app útil” a una conducta observable.
+
+Una buena especificación cuenta quién necesita algo, qué debería pasar y qué resultados permiten comprobarlo.
+
+**Explicación:** Usá historias breves, reglas numeradas y ejemplos. Los requisitos no funcionales relevantes, como usar teclado o no perder datos ante un error, también deben poder revisarse. Las dudas abiertas se escriben como dudas, no como hechos.
+
+**Ejemplo:** “Leer”, “ leer ” y “LEER” no deben crear tres hábitos si acordamos que el nombre es único sin distinguir mayúsculas.
+
+**Pregunta al grupo:** ¿Qué debería pasar con un nombre compuesto solo por espacios?
+
+**Transición:** Podemos escribir estas reglas con patrones simples que reducen ambigüedad.
+
+**Idea clave:** “Se guarda” es una intención. “Sigue visible al recargar” es una comprobación.
+
+- [Video de referencia · Especificación](https://www.youtube.com/watch?v=5HaOxAAA5qI&t=4203s)
+
+## 11 · Escribir claro es describir qué pasa.
+
+El video introduce EARS para estructurar requisitos. Para empezar, usá condiciones y respuestas concretas; no necesitás memorizar una plantilla compleja.
+
+**Explicación:** Esta es una simplificación pedagógica de los patrones del video. No la presentes como todo el estándar EARS. El ejercicio consiste en transformar frases vagas en eventos, condiciones y respuestas que el docente pueda leer en voz alta.
+
+**Ejemplo:** “El sistema será intuitivo” no alcanza. “Si el nombre está vacío, mostrará el motivo y no creará un hábito” permite una prueba.
+
+**Pregunta al grupo:** ¿Cómo reescribirías “manejar bien los errores” para el caso de un nombre duplicado?
+
+**Transición:** Ahora que entendemos el proceso, veamos qué aporta cada skill.
+
+**Idea clave:** Después de cada regla, preguntá: ¿con qué ejemplo comprobaríamos esto?
+
+- [Video de referencia · Patrones de requisitos](https://www.youtube.com/watch?v=5HaOxAAA5qI&t=2672s)
+
+## 12 · Cinco pasos. Sin prompts interminables.
+
+Una skill guarda instrucciones reutilizables. No reemplaza el método: nos ayuda a repetirlo sin escribir el procedimiento entero cada vez.
+
+**Explicación:** El video presenta skills después de demostrar el flujo. Aquí ya vimos los conceptos y ahora las abrimos antes de la demo para saber qué vamos a invocar. Remarcá que nuestros nombres provienen del paquete de Matt Pocock; no son los comandos del video.
+
+**Ejemplo:** En lugar de volver a pegar todo el prompt de clarificación, invocamos grill-with-docs con la idea y el contexto del proyecto.
+
+**Pregunta al grupo:** ¿Qué parte del trabajo seguiría siendo necesaria aunque no existiera ninguna skill?
+
+**Transición:** Abramos las cinco principales: qué reciben, qué producen y cómo se usan.
+
+**Idea clave:** No-tecnico acompaña el recorrido para traducir y explicar las decisiones.
+
+- [Video de referencia · Skills reutilizables](https://www.youtube.com/watch?v=5HaOxAAA5qI&t=6440s)
+- [Skills originales · Matt Pocock](https://github.com/mattpocock/skills)
+
+## 13 · Las skills que vas a usar.
+
+Cada desplegable explica cuándo invocarla, qué contexto necesita y qué debería entregar. También podés abrir su SKILL.md completo y descargarlo.
+
+**Explicación:** Abrí grill-with-docs, leé su ejemplo de uso y mostrale al grupo que carga grilling y domain-modeling. Después abrí to-spec para mostrar que sintetiza decisiones previas. Los textos completos se generan desde las mismas carpetas que descarga el alumno.
+
+**Ejemplo:** “Usá to-spec con nuestras decisiones sobre nombres y marcas. Conservá las dudas pendientes y no implementes todavía”.
+
+**Pregunta al grupo:** ¿Qué información le faltaría a to-spec si nunca discutimos qué cuenta como una racha?
+
+**Transición:** Hay cuatro skills de soporte y una adaptación que ayuda a quienes no son técnicos.
+
+**Idea clave:** Una skill es legible: podés revisar las instrucciones antes de ejecutarlas.
+
+
+
+## 14 · Lo que sostiene el recorrido.
+
+Estas skills aportan preguntas, lenguaje compartido, pruebas y revisión. No-tecnico adapta la conversación para que puedas decidir sin saber arquitectura.
+
+**Explicación:** Abrí no-tecnico y leé el criterio “necesidad → recomendación → motivo → compromiso”. Después mostrale al grupo dónde TDD describe una prueba de comportamiento y dónde code-review contrasta intención y estándares. Si no hay subagentes, la adaptación permite revisar secuencialmente y decirlo.
+
+**Ejemplo:** El alumno dice “quiero guardar mi progreso”. El agente pregunta si se usa en un solo dispositivo o se comparte, y explica por qué eso cambia la solución.
+
+**Pregunta al grupo:** ¿Qué necesidad justificaría pasar de almacenamiento local a una base compartida?
+
+**Transición:** Veamos cómo pedir una recomendación sin convertirla en un examen técnico.
+
+**Idea clave:** No hace falta recordar todos los comandos. Sí entender el papel de cada uno.
+
+
+
+## 15 · No elijas tecnologías que todavía no entendés.
+
+Contá cómo querés que se use el producto. El agente investiga y recomienda las piezas necesarias, conectando cada elección con una necesidad.
+
+**Explicación:** La demo no necesita un framework ni una base remota para enseñar el ciclo. Una web compartida real sería otra necesidad y podría requerir servidor, autenticación y base de datos. No confundir la simplificación educativa con arquitectura de producción.
+
+**Ejemplo:** Prompt: “Usá no-tecnico. Proponé la solución más sencilla para una práctica local y explicame cómo viaja la acción de marcar un hábito”.
+
+**Pregunta al grupo:** ¿Qué perderíamos al cambiar de computadora?
+
+**Transición:** La recomendación va al plan; la conducta esperada, a la spec.
+
+**Idea clave:** Una recomendación técnica siempre debe explicar también su límite.
+
+
+
+## 16 · Dos documentos. Dos decisiones distintas.
+
+Primero acordamos el comportamiento. Después elegimos una solución técnica que lo cumpla y podamos entender.
+
+**Explicación:** Explicá la diferencia con el mismo requisito. La spec no debería elegir un archivo por costumbre. El plan propone una estructura y justifica una solución; una restricción tecnológica explícita del proyecto sí se conserva como tal.
+
+**Ejemplo:** “Persiste al recargar” es un criterio de producto. “Usar localStorage” es una solución para este alcance local, con límites conocidos.
+
+**Pregunta al grupo:** ¿Dónde registraríamos que no se permite sincronizar información con un servicio externo?
+
+**Transición:** El último puente antes de implementar es dividir el trabajo.
+
+**Idea clave:** Cambiar la forma de guardar no debería cambiar por accidente las reglas del hábito.
+
+
+
+## 17 · Un recorrido completo. Después, el siguiente.
+
+Cada ticket debería terminar en una conducta observable. Así descubrimos antes si entendimos bien el problema.
+
+**Explicación:** El video usa un tasks.md con tareas y requisitos referidos. Nuestro paquete usa un archivo por ticket y prefiere cortes verticales. El cambio sorpresa T3 se acuerda después de tener v1. No autoriza implementarlo antes de tiempo.
+
+**Ejemplo:** Al cerrar T1 podemos mostrar una lista que persiste. Al cerrar T2 podemos demostrar qué hace una marca repetida.
+
+**Pregunta al grupo:** ¿Qué podrías enseñar al grupo al terminar un ticket llamado “preparar todos los estilos”?
+
+**Transición:** Es momento de abrir una carpeta nueva y construir el ejemplo en vivo.
+
+**Idea clave:** Cada ticket une pantalla, lógica, datos y comprobación; no es “todo el frontend”.
+
+
+
+## 18 · Vamos a construir un hábito de principio a fin.
+
+Una mini web para crear hábitos de estudio, marcarlos y ver su racha. Partimos de una carpeta nueva y usamos las skills durante la clase.
+
+**Explicación:** Prepará antes el agente autenticado, una carpeta de práctica y las skills. La demo adapta la CLI de hábitos del video a una web más visible para el grupo. No conectes bases remotas ni uses datos reales. Los estados de respaldo están en demo-en-vivo/checkpoints y se pueden ejecutar con un servidor local.
+
+**Ejemplo:** Proyectá el objetivo de la app y anunciá el criterio que vamos a comprobar: al recargar, el hábito y su marca siguen ahí.
+
+**Pregunta al grupo:** ¿Qué palabra de este pedido necesita una definición antes de programar?
+
+**Transición:** Primero preparamos el lugar de trabajo.
+
+**Idea clave:** Es una construcción en vivo. Los checkpoints son material de respaldo, no resultados generados durante la sesión.
+
+**En vivo · 2 min:**
+
+```text
+Vamos a construir una mini web local de hábitos de estudio para una práctica de SDD. Trabajá en una carpeta nueva. Primero definimos el producto; no implementes todavía.
+```
+
+**Resultado esperado:** Carpeta de práctica elegida y alcance local entendido.
+
+- [Video de referencia · Práctica del video](https://www.youtube.com/watch?v=5HaOxAAA5qI&t=2905s)
+
+## 19 · Preparar las reglas y las herramientas.
+
+El setup ocurre una vez por proyecto. En esta práctica, los tickets serán archivos locales y las decisiones deberán poder explicarse en español.
+
+**Explicación:** Prepará el acceso al agente antes de la clase. Dentro de estos tres minutos, proyectá lo que el setup encontró y la convención elegida. No copies las reglas de tutorías del ejemplo extendido: este proyecto trata de hábitos. Si usás Claude Code, asegurá que su archivo de entrada refiera a las reglas correctas.
+
+**Ejemplo:** El instalador corre primero en simulación. Para la práctica conviene una carpeta vacía y un repositorio local inicializado.
+
+**Pregunta al grupo:** ¿Dónde va a guardar el agente el primer ticket?
+
+**Transición:** Ahora sí hacemos la entrevista de producto.
+
+**Idea clave:** Antes de seguir, el agente debe poder encontrar no-tecnico y grill-with-docs.
+
+**En vivo · 3 min:**
+
+```text
+Usá setup-matt-pocock-skills para preparar este proyecto educativo. Quiero tickets Markdown locales, mensajes en español y el ciclo spec → plan → tickets → implementación → evidencia. No agregues cuentas, servicios externos ni código de la aplicación todavía.
+```
+
+**Resultado esperado:** Reglas del proyecto y ubicación de documentos y tickets definidas.
+
+
+
+## 20 · La pregunta importante: ¿qué significa “racha”?
+
+El agente debe hacer visibles las decisiones. No vamos a responderle con tecnologías: vamos a responderle con ejemplos del uso.
+
+**Explicación:** Dejá que el agente pregunte primero. Usá estas decisiones como respuesta guía si el grupo se bloquea. La racha cuenta días consecutivos hacia atrás desde hoy si está marcado o desde ayer si hoy está pendiente. Un hueco corta la racha; marcar ayer será el cambio de v2.
+
+**Ejemplo:** Fecha de demostración: 10/09/2026. Marcas del 8 y 9 → racha 2; agregar el 10 → racha 3. Solo el 8 → racha 0.
+
+**Pregunta al grupo:** ¿Queremos que la racha se pierda a primera hora del día antes de poder completar el hábito?
+
+**Transición:** Guardemos las decisiones para que no dependan de recordar esta conversación.
+
+**Idea clave:** Estas respuestas son decisiones de producto, no detalles de implementación.
+
+**En vivo · 5 min:**
+
+```text
+Usá no-tecnico junto con grill-with-docs. Quiero crear hábitos de estudio, marcarlos hoy y ver una racha. Es una web para una persona en su navegador. Preguntame por nombres, repetición y qué significa racha; recomendá la solución técnica explicándola. No implementes todavía.
+```
+
+**Resultado esperado:** Decisiones sobre nombres, marcas, racha, almacenamiento local y exclusiones.
+
+
+
+## 21 · De las respuestas al contrato.
+
+La spec conserva lo acordado y define cómo lo comprobamos. Antes de continuar, leemos los criterios en voz alta.
+
+**Explicación:** Abrí el archivo que produjo to-spec y contrastalo con las respuestas. Si inventó sincronización, recordatorios o usuarios múltiples, sacalos. La fecha controlada permite enseñar el límite sin esperar al día siguiente. Pedí estados vacíos y errores de almacenamiento comprensibles.
+
+**Ejemplo:** Agregá un nombre vacío al listado de casos y comprobá que la spec lo rechaza con un motivo.
+
+**Pregunta al grupo:** ¿Qué criterio nos permitiría detectar que el agente duplica marcas?
+
+**Transición:** Con el contrato claro, podemos revisar cómo propone construirlo.
+
+**Idea clave:** Un documento bonito no basta: sus ejemplos tienen que representar nuestra intención.
+
+**En vivo · 4 min:**
+
+```text
+Usá to-spec para sintetizar nuestros acuerdos sobre hábitos. Incluí nombres únicos ignorando espacios extremos y mayúsculas, una marca por día, racha tolerante hasta ayer y persistencia al recargar. Definí criterios con fecha de referencia 2026-09-10. En v1 solo se marca hoy. Separá el plan técnico y dejá las dudas visibles.
+```
+
+**Resultado esperado:** Spec pequeña con reglas, cuatro criterios concretos y exclusiones claras.
+
+
+
+## 22 · Elegir piezas pequeñas. Dividir por resultados.
+
+Para esta práctica local alcanza con una web pequeña, lógica separada y almacenamiento en el navegador. El agente debe explicar por qué no hace falta una infraestructura mayor.
+
+**Explicación:** La elección sin framework es una propuesta para una demo pequeña, no una enseñanza contra frameworks. Si el alumno ya tiene un proyecto, se reutiliza su stack. Revisá que cada ticket termine en algo demostrable y que no se instale una base remota por hábito.
+
+**Ejemplo:** La lógica recibe una fecha explícita, así puede probarse el 10 de septiembre sin depender del reloj de quien enseña.
+
+**Pregunta al grupo:** ¿Qué requisito nuevo obligaría a revisar el almacenamiento local?
+
+**Transición:** Pasamos a implementar solo lo que quedó acordado.
+
+**Idea clave:** T1: crear y persistir. T2: marcar y calcular. El cambio T3 se acuerda después.
+
+**En vivo · 4 min:**
+
+```text
+Usá no-tecnico para explicar el plan mínimo de esta web local. Después usá to-tickets: T1 debe permitir crear, listar y conservar hábitos; T2 marcar hoy y calcular la racha. Cada ticket debe tener sus criterios y dependencias. Proponé primero el desglose; no implementes todavía.
+```
+
+**Resultado esperado:** Plan entendible y dos tickets verticales para v1.
+
+
+
+## 23 · Un ticket. Una prueba. Un resultado.
+
+El agente implementa de forma acotada. Al terminar, mostramos la aplicación y revisamos el criterio antes de pasar al siguiente ticket.
+
+**Explicación:** Reservá ocho minutos para T1 y T2. No prometas un tiempo exacto del modelo. Si demora, abrí el checkpoint 01-crear o 02-marcar-v1 y declaralo como respaldo preparado. El guion explica cómo ejecutarlos. No presentes un archivo prehecho como generación en vivo.
+
+**Ejemplo:** En T1 creá Leer y recargá. En T2 marcá hoy y repetí la acción: debe informar que ya está hecho.
+
+**Pregunta al grupo:** ¿La segunda marca cambió el resultado? ¿Eso coincide con A3?
+
+**Transición:** Ahora recorremos los criterios juntos, no solo el camino feliz.
+
+**Idea clave:** Una prueba que pasa sin representar nuestra regla no demuestra que terminamos.
+
+**En vivo · 8 min:**
+
+```text
+Usá implement para resolver solo T1 con sus criterios. Escribí primero una prueba de comportamiento, implementá lo necesario y ejecutá las comprobaciones. Abrí la app para que revise el resultado. Indicá qué cumple y qué falta; no avances a T2 hasta que revisemos T1.
+```
+
+**Resultado esperado:** T1 demostrable. Luego repetir el proceso con T2.
+
+
+
+## 24 · Volvemos a los criterios. Uno por uno.
+
+La validación conecta el acuerdo con lo que realmente observamos. Usá los ejemplos de fechas para contrastar la racha y registrá los resultados observados.
+
+**Explicación:** Pedí una matriz con criterio, prueba, resultado y limitaciones. Probá también entrada vacía y un error al guardar. En la demo, el selector de fecha sirve para enseñanza: no representa una protección contra cambiar el reloj de una app real.
+
+**Ejemplo:** Usá los botones de fecha del respaldo o sus datos de ejemplo para demostrar ayer y hoy. No esperes a que pase un día.
+
+**Pregunta al grupo:** ¿Hay algún criterio en la spec que todavía no vimos funcionar?
+
+**Transición:** Ahora cambiemos una regla y mostremos por qué conservamos los documentos.
+
+**Idea clave:** Lo que no se comprobó queda pendiente, aunque el agente diga “listo”.
+
+**En vivo · 4 min:**
+
+```text
+Recorré la spec criterio por criterio. Para cada uno, indicá cómo se probó, el resultado real y qué falta verificar. Contrastá la interfaz con las reglas, no solo con los tests. No marques un criterio como cumplido si no lo ejecutaste.
+```
+
+**Resultado esperado:** Matriz de evidencia con resultados observados; cualquier falta queda pendiente.
+
+
+
+## 25 · “Ayer lo hice, pero olvidé marcarlo.”
+
+Aparece una necesidad nueva: permitir marcar ayer. La v1 solo permitía hoy. Actualizamos el acuerdo, revisamos el impacto y construimos ese cambio.
+
+**Explicación:** Este es el mismo tipo de cambio que propone el video en su cierre práctico. Usá la fecha de referencia 10/09. Marcá el 8 mediante la preparación del escenario, luego permití el 9 como ayer y observá cómo recupera una racha válida. No agregues edición libre de cualquier fecha.
+
+**Ejemplo:** Con marca del 8 y hoy 10, la racha es 0. Al registrar ayer 9, pasa a 2. Si marcamos también hoy 10, pasa a 3.
+
+**Pregunta al grupo:** ¿Qué regla de la v1 hay que actualizar antes de aceptar el botón “Marcar ayer”?
+
+**Transición:** Ahora sabemos cómo continuar el proyecto sin empezar de cero.
+
+**Idea clave:** Spec → impacto → ticket → pruebas → código → evidencia. El ciclo se repite.
+
+**En vivo · 5 min:**
+
+```text
+Cambio acordado: permitir marcar ayer además de hoy. Fechas anteriores o futuras siguen prohibidas. No duplicar marcas y conservar la definición de racha. Actualizá primero la spec y explicá el impacto; proponé T3. Después de revisar ese cambio, implementalo y mostrá evidencia de A5.
+```
+
+**Resultado esperado:** Spec v2, ticket del cambio, botón para ayer y evidencia de racha recalculada.
+
+- [Video de referencia · Cambio e iteración](https://www.youtube.com/watch?v=5HaOxAAA5qI&t=6297s)
+
+## 26 · Que compile. Que cumpla. Que se entienda.
+
+La construcción técnica, el comportamiento y la explicación tienen que coincidir. Una especificación también puede necesitar correcciones.
+
+**Explicación:** Cerrá volviendo a los objetivos de apertura. No prometas que SDD hace determinista al modelo o elimina los bugs. Nos da control sobre el acuerdo, las decisiones y las comprobaciones. El costo del proceso debe ser proporcional al proyecto.
+
+**Ejemplo:** Los tests podrían calcular bien la racha, pero la interfaz decir “0 días” por usar otro valor. La validación conecta las dos cosas.
+
+**Pregunta al grupo:** ¿Qué revisarías mañana si una mejora cambia por accidente las rachas?
+
+**Transición:** Los materiales permiten repetir el recorrido desde una carpeta nueva.
+
+**Idea clave:** No te lleves solo una aplicación: llevate una forma de continuarla.
+
+- [Video de referencia · Validación](https://www.youtube.com/watch?v=5HaOxAAA5qI&t=6140s)
+
+## 27 · El método se aprende volviendo a usarlo.
+
+Repetí la demo sin copiar la solución: definí, clarificá, planeá, dividí, implementá y comprobá. El repositorio reúne las skills y los estados de respaldo.
+
+**Explicación:** Mostrá el enlace del repositorio del curso si ya está publicado. Si GitHub todavía no está configurado, la descarga contiene el mismo kit: no presentes el repositorio de Matt como si fuera el del curso. Los enlaces de referencia están separados. El apartado Noticias tiene su propia navegación y no es parte del temario.
+
+**Ejemplo:** La tarea para el alumno: cambiar una sola regla de hábitos, explicar su impacto y mostrar un criterio antes y después.
+
+**Pregunta al grupo:** ¿Qué regla vas a cambiar en tu práctica y cómo sabrás que funciona?
+
+**Transición:** Abrí preguntas. Las noticias de Astra se pueden presentar como una sesión separada, en otro momento.
+
+**Idea clave:** Una idea, tres criterios y un primer ticket: suficiente para empezar a practicar.
+
+
+
+# Sesión extra · Noticias de GPT-6 Astra
+
+Este bloque no forma parte del método SDD ni es requisito para hacer la práctica.
+
+## 01 · GPT-6 Astra. Una nueva escala de posibilidades.
+
+Un bloque independiente para conocer capacidades, casos documentados y condiciones de evaluación. No necesitás Astra para seguir la clase de SDD.
+
+**Explicación:** Presentá este bloque como noticias y fijá una duración opcional de 8 a 10 minutos. No lo intercales entre los conceptos del curso. Todas las cifras se revisaron el 10 de septiembre de 2026.
+
+**Ejemplo:** Una demo de construcción de un juego permite mostrar tanto el resultado como el proceso que lo hizo posible.
+
+**Pregunta al grupo:** ¿Qué tipo de tarea les gustaría probar con estas capacidades?
+
+**Transición:** Primero, tres datos concretos de la ficha oficial.
+
+**Idea clave:** Las capacidades dependen del modelo, las herramientas disponibles y el entorno.
+
+
+
+## 02 · Más espacio para trabajar.
 
 El contexto es la información disponible para una respuesta. No equivale a memoria permanente ni garantiza que el agente use bien cada detalle.
 
 **Explicación:** Un token es una unidad de texto que procesa el modelo; no lo conviertas en un número fijo de páginas. Los límites citados corresponden a la ficha API de Astra: la experiencia concreta también depende del producto y la cuenta. Evitá convertir la apertura en una comparación comercial.
 
-**Ejemplo:** Podemos dar al agente reglas de reservas y documentos del curso. Si esos documentos se contradicen, un contexto más grande no resuelve por sí mismo qué regla debe prevalecer.
+**Ejemplo:** Un agente puede trabajar con un manual, un informe y un conjunto de archivos. Si esos documentos se contradicen, un contexto más grande no resuelve por sí mismo qué fuente debe prevalecer.
 
 **Pregunta al grupo:** Si pudiera leer todos los archivos, ¿sabría automáticamente qué queremos cambiar?
 
-**Transición:** La capacidad del modelo es solo una de las tres capas del resultado.
+**Transición:** El entorno también cambia cómo se coordina el trabajo.
 
 **Idea clave:** Un modelo capaz necesita un objetivo claro y una forma de verificarlo.
 
 - [OpenAI · ficha de Astra](https://developers.openai.com/api/docs/models/gpt-6-astra)
 
-## 03 · Un resultado. Tres capas.
+## 03 · Trabajar, recibir contexto y continuar.
 
-Un agente combina un modelo con herramientas y un ciclo de trabajo. SDD le da una dirección explícita a ese ciclo.
+La guía de Astra describe nuevas formas de coordinar tareas largas. Su disponibilidad concreta depende de la aplicación y de la integración que se esté usando.
 
-**Explicación:** Usá modelo para hablar de la capacidad de razonamiento, entorno para las herramientas y método para nuestra forma de dirigir el trabajo. Tener un modelo potente sin acceso a ejecutar pruebas no equivale a tener un agente que pueda verificar cambios.
+**Explicación:** Explicá estas funciones con una situación concreta y evitá atribuir ejecución de herramientas al modelo solo. La aplicación implementa y gestiona permisos, herramientas y continuidad. No hagas promesas de disponibilidad para cuentas que no verificaste.
 
-**Ejemplo:** La persona pide impedir reservas duplicadas; el modelo propone una solución; el entorno ejecuta una prueba; la spec permite decidir si la prueba representa la necesidad.
+**Ejemplo:** Mientras una herramienta investiga un archivo, el agente puede resolver otra parte independiente; si el usuario corrige el objetivo, incorpora la indicación.
 
-**Pregunta al grupo:** ¿Cuál de estas capas falta si el agente solo describe el cambio, pero no puede probarlo?
+**Pregunta al grupo:** ¿Qué corrección les gustaría poder dar mientras el agente está trabajando?
 
-**Transición:** Veamos una comparación donde el mismo modelo obtiene resultados distintos según el entorno.
+**Transición:** Veamos una evaluación que distingue modelo y entorno.
 
-**Idea clave:** Para repetir un resultado, entendé el sistema completo.
+**Idea clave:** Una función documentada en la API no implica que todas las apps la expongan igual.
 
-
+- [OpenAI · guía de Astra](https://developers.openai.com/api/docs/guides/latest-model)
 
 ## 04 · El entorno también cuenta.
 
@@ -67,7 +568,7 @@ Comparación del mismo modelo y nivel de razonamiento. El Provider Adapter conse
 
 **Pregunta al grupo:** ¿Qué tendríamos que registrar para poder reproducir una demo?
 
-**Transición:** La siguiente experiencia muestra cómo traducir una intención en un ciclo de observación y mejora.
+**Transición:** Un caso concreto ayuda a entender cómo se trabaja con esas herramientas.
 
 **Idea clave:** +35,9 puntos porcentuales en esta evaluación. No es una garantía sobre tu aplicación.
 
@@ -79,416 +580,12 @@ El caso de exploración espacial muestra que construir también implica observar
 
 **Explicación:** Resumí el caso sin prometer que cualquiera puede repetir su resultado en el mismo tiempo. Separá lo que quiso experimentar la persona de lo que aportaron las herramientas. Las pruebas y la observación humana se complementan.
 
-**Ejemplo:** En nuestra app, una reserva que aparece y desaparece al recargar sería la misma clase de contradicción entre lo que la interfaz promete y lo que el sistema conserva.
+**Ejemplo:** Un planeta visible que desaparece al acercarse obliga a observar, instrumentar y volver a probar la experiencia.
 
-**Pregunta al grupo:** ¿Una captura bonita demostraría que el planeta es alcanzable o que una reserva persiste?
+**Pregunta al grupo:** ¿Una captura bonita demostraría que el planeta es alcanzable?
 
-**Transición:** Ahora traslademos esa necesidad de evidencia a proyectos cotidianos.
+**Transición:** Cerrá las noticias. El botón Clase SDD vuelve al curso sin mezclar ambos recorridos.
 
 **Idea clave:** Una demo útil explica cómo se detectó y corrigió el problema.
 
 - [OpenAI · Building games with Astra](https://developers.openai.com/blog/how-to-build-games-with-astra)
-
-## 06 · Rápido hacia qué, exactamente.
-
-La velocidad ayuda cuando la dirección es clara. Si faltan decisiones, el agente las completa con supuestos que pueden parecer requisitos.
-
-**Explicación:** No sostengas que programar dejó de ser difícil. El punto es que producir más rápido aumenta el valor de aclarar las decisiones que afectan al usuario. Algunas incógnitas se resuelven con una conversación; otras necesitan investigar o prototipar.
-
-**Ejemplo:** Si omitimos la simultaneidad, una demo con un solo alumno parece perfecta. El problema recién aparece cuando se usa de verdad.
-
-**Pregunta al grupo:** ¿Qué decisión está tomando el agente por ustedes cuando dicen “que sea fácil de usar”?
-
-**Transición:** Eso no vuelve incorrecta toda exploración informal. Importa el costo del error.
-
-**Idea clave:** El costo aparece cuando descubrimos tarde que construimos sobre supuestos.
-
-
-
-## 07 · Elegí el rigor según el riesgo.
-
-El costo del error crece hacia arriba. La vida útil crece hacia la derecha. Un proyecto breve también puede requerir controles fuertes.
-
-**Explicación:** Leé los ejes antes de los cuadrantes. Es una guía de discusión, no una taxonomía rígida. Vibe coding aquí nombra una práctica exploratoria sin conservar necesariamente una definición verificable; usar IA para programar no implica trabajar así.
-
-**Ejemplo:** Un mockup descartable y un script que borra datos pueden llevar una hora cada uno. Su necesidad de rigor es muy distinta.
-
-**Pregunta al grupo:** ¿Dónde pondrían una página personal? ¿Y una importación única de las notas de alumnos?
-
-**Transición:** La inversión en documentación también se puede graduar.
-
-**Idea clave:** La duración no decide sola: mirá consecuencias, colaboración y reversibilidad.
-
-
-
-## 08 · La precisión no se mide en páginas.
-
-Empezá por el artefacto más pequeño que permita entender y verificar el trabajo. Ampliá cuando aumenten las decisiones o las consecuencias.
-
-**Explicación:** Evitá asociar un número fijo de días con una metodología. Un brief puede alcanzar para una mejora pequeña de un producto importante si sus reglas existentes están claras. Una spec extensa también puede contener ambigüedad.
-
-**Ejemplo:** “Mejorar reservas” es corto pero inútil. “Impedir una segunda reserva activa del mismo turno y mostrar el motivo” es corto y comprobable.
-
-**Pregunta al grupo:** ¿Qué información necesitaría alguien que retoma su proyecto dentro de un mes?
-
-**Transición:** Ese contexto durable es la base del ciclo de trabajo que vamos a practicar.
-
-**Idea clave:** Escribí lo suficiente para que otra persona no tenga que adivinar.
-
-
-
-## 09 · El ciclo sigue. Los actores cambian.
-
-Entender, diseñar, construir y comprobar siguen siendo necesarios. Un agente puede participar en cada paso si cuenta con contexto y criterios.
-
-**Explicación:** SDD no inventa todos estos pasos ni exige resolver todo por adelantado. Su contribución en esta clase es conectar los pasos mediante documentos legibles por humanos y agentes. Volver atrás por aprendizaje es normal.
-
-**Ejemplo:** Una prueba de simultaneidad puede revelar que el plan técnico necesita cambiar. La regla de un cupo sigue siendo la misma.
-
-**Pregunta al grupo:** ¿Qué diferencia hay entre cambiar una necesidad y cambiar la solución que la satisface?
-
-**Transición:** Vamos a colocar la especificación en el centro de ese ciclo.
-
-**Idea clave:** No es una cascada irreversible: la evidencia puede hacernos volver.
-
-
-
-## 10 · La intención tiene dónde vivir.
-
-SDD usa una especificación explícita para orientar decisiones, implementación y validación. La spec hace que lo acordado sobreviva a la conversación.
-
-**Explicación:** La spec no se ejecuta necesariamente como un programa. Se vuelve operativa cuando dirige un plan y sus criterios se relacionan con pruebas y observaciones. Evitá prometer que escribir un documento garantiza la calidad.
-
-**Ejemplo:** La regla “cada turno admite una reserva activa” vive en la spec. El plan decide cómo hacerla cumplir. La prueba muestra qué pasa con dos solicitudes juntas.
-
-**Pregunta al grupo:** ¿Cómo sabemos que una spec está siendo utilizada y no solo archivada?
-
-**Transición:** La relación entre spec y código también cambia entre enfoques.
-
-**Idea clave:** Un cambio relevante vuelve al contrato y recorre el ciclo otra vez.
-
-
-
-## 11 · ¿Qué pasa después de construir?
-
-Usamos esta distinción como vocabulario del curso. No son certificaciones ni un estándar universal de madurez.
-
-**Explicación:** Estos términos describen relaciones posibles con la especificación. No presentes spec-as-source como una garantía de regenerar cualquier aplicación sin intervención. En anchored sigue haciendo falta criterio humano para detectar contradicciones.
-
-**Ejemplo:** Si cambiamos las cancelaciones en código y dejamos la regla anterior en la spec, ya no tenemos una referencia confiable para el próximo agente.
-
-**Pregunta al grupo:** ¿Qué documento o evidencia consultarían si el código y la spec dicen cosas distintas?
-
-**Transición:** El siguiente esquema muestra cómo volver a alinearlos.
-
-**Idea clave:** En esta clase practicamos spec-anchored: mantener intención y comportamiento alineados.
-
-
-
-## 12 · Intención y conducta. Siempre en diálogo.
-
-La spec explica lo que debería ocurrir; el código produce lo que ocurre; las pruebas y la observación comparan ambos.
-
-**Explicación:** Para cambios de producto deliberados, actualizamos primero el acuerdo. Para corregir un bug, la spec puede ya describir lo correcto y no necesita reescribirse. Un incidente urgente puede requerir actuar primero y reconciliar documentos después; no enseñes una secuencia ritual que impida resolver problemas.
-
-**Ejemplo:** Si la spec ya prohíbe duplicados y aparecen dos reservas, corregimos el defecto. Si ahora queremos dos cupos por turno, cambió la necesidad.
-
-**Pregunta al grupo:** ¿Permitir cancelaciones tardías es un bugfix o una decisión de producto?
-
-**Transición:** Veamos qué necesita contener una buena especificación.
-
-**Idea clave:** Ante una diferencia, identificá si cambió la intención o si apareció un defecto.
-
-
-
-## 13 · Describí conducta. Hacé visibles los límites.
-
-Una buena spec permite discutir el producto antes de elegir tablas, librerías o archivos.
-
-**Explicación:** Leé cada sección como una respuesta a una pregunta distinta. El criterio A2 agrega una situación que una pantalla estática no puede demostrar. No inventes reglas adicionales como si el usuario ya las hubiera aceptado: en esta demo son decisiones explícitas del ejercicio.
-
-**Ejemplo:** “Que funcione bien” no indica cómo revisar. “La reserva persiste al recargar” permite una demostración concreta.
-
-**Pregunta al grupo:** ¿Qué agregarían para impedir que un alumno cancele la reserva de otra persona?
-
-**Transición:** No todo lo que necesitamos construir pertenece a este documento.
-
-**Idea clave:** Los criterios describen resultados observables, no intenciones vagas.
-
-
-
-## 14 · La spec dice qué. El plan propone cómo.
-
-Un requisito técnico real puede ser una restricción de la spec. Las soluciones elegidas por conveniencia deben quedar identificadas como decisiones del plan.
-
-**Explicación:** No pidas al alumno elegir una base de datos como requisito de entrada. Preguntá primero por persistencia, usuarios y simultaneidad. Si ya tiene un sistema o una restricción institucional, sí hay que respetarla y explicitarla.
-
-**Ejemplo:** La regla “no confirmar dos reservas” es de producto. Cumplirla con una transacción y una restricción de unicidad es una decisión técnica que el agente debe explicar.
-
-**Pregunta al grupo:** ¿“Los datos deben permanecer en nuestra infraestructura” sería una preferencia técnica o una restricción real?
-
-**Transición:** Las skills nos ayudan a repetir esta separación sin recordar todo el procedimiento.
-
-**Idea clave:** Podemos cambiar de tecnología sin cambiar el problema que resolvemos.
-
-
-
-## 15 · Del diálogo a una entrega.
-
-Una skill es una instrucción reutilizable para el agente. El paquete del curso conserva los nombres originales y agrega no-tecnico para adaptar la conversación.
-
-**Explicación:** Las skills no son software mágico ni conceden herramientas o permisos que no existían. El alumno invoca el objetivo de la fase. to-spec organiza decisiones previas: no sustituye una conversación pendiente. La sintaxis de invocación depende del agente.
-
-**Ejemplo:** “Usá no-tecnico junto con grill-with-docs. Quiero que mis alumnos reserven tutorías. Hablame de uso y recomendá la parte técnica”.
-
-**Pregunta al grupo:** ¿Qué paso se saltea alguien que genera una spec antes de resolver qué significa “cancelar”?
-
-**Transición:** Debajo del camino visible hay prácticas que sostienen la calidad.
-
-**Idea clave:** Usá no-tecnico junto a grill-with-docs si querés que el agente traduzca y recomiende.
-
-- [Matt Pocock · repositorio original](https://github.com/mattpocock/skills)
-- [OpenAI · skills](https://learn.chatgpt.com/docs/build-skills)
-
-## 16 · El rigor tiene herramientas concretas.
-
-No hace falta memorizar nueve comandos. Sí conviene entender qué práctica aporta cada skill y cuándo ayuda.
-
-**Explicación:** Explicá TDD como prueba, implementación y mejora, sin exigir al alumno saber cómo configurar un runner. El agente se ocupa de lo técnico. Las skills originales pueden utilizar agentes auxiliares si el entorno lo permite; si no, la revisión puede ser secuencial.
-
-**Ejemplo:** Si en una conversación turno significa horario y en otra significa reserva, el modelo de dominio impide que esa ambigüedad se propague al sistema.
-
-**Pregunta al grupo:** ¿Qué problema resolvería una definición precisa de “disponible”?
-
-**Transición:** Ahora agregamos la adaptación que evita convertir la entrevista en un examen técnico.
-
-**Idea clave:** Las herramientas apoyan el criterio; no reemplazan leer el resultado.
-
-
-
-## 17 · Vos conocés la necesidad. El agente propone la técnica.
-
-No necesitás saber arquitectura para especificar un producto. La conversación debe empezar por lo que las personas necesitan hacer.
-
-**Explicación:** No-tecnico es una instrucción transversal, no un framework ni un sustituto de la spec. Si otra skill pide elegir entre SQL y NoSQL, el agente traduce esa decisión a una necesidad de datos y propone la opción mejor justificada. El usuario conserva el control sobre necesidades, costos y compromisos.
-
-**Ejemplo:** En lugar de “¿Postgres o MongoDB?”, preguntar “¿varias personas pueden intentar reservar el mismo cupo y la información debe seguir al cerrar la página?”. Luego explicar la recomendación.
-
-**Pregunta al grupo:** ¿Qué quieren que el sistema haga sin tener que decidir cómo se programa?
-
-**Transición:** Veamos una ronda concreta con la clase de preguntas que sí ayudan.
-
-**Idea clave:** La skill acompaña el grilling: no cambia tu idea ni oculta decisiones detrás de jerga.
-
-
-
-## 18 · Preguntar sin examinar al alumno.
-
-El agente agrupa preguntas comprensibles, reutiliza respuestas y ofrece una recomendación cuando todavía no sabés qué conviene.
-
-**Explicación:** Mantené una ronda de hasta tres preguntas sobre las incógnitas que bloquean el siguiente paso. No preguntes todo un cuestionario antes de escuchar. “No sé” habilita una recomendación razonada, no un interrogatorio técnico. Distinguí supuestos provisionales de decisiones acordadas.
-
-**Ejemplo:** Si el alumno no conoce el volumen, proponé diseñar para el grupo inicial e identificar qué habría que revisar al crecer. No inventes diez mil usuarios para justificar complejidad.
-
-**Pregunta al grupo:** ¿Qué pregunta de estas cambiaría más su primera versión?
-
-**Transición:** Con necesidades claras ya podemos explicar una arquitectura concreta.
-
-**Idea clave:** Una recomendación es una propuesta; una respuesta del alumno es una decisión.
-
-
-
-## 19 · Tres piezas. Una reserva segura.
-
-Para una web de tutorías compartida, una aplicación con servidor y una base relacional es una opción razonable. Primero se revisa el proyecto existente.
-
-**Explicación:** Arquitectura es cómo se reparten responsabilidades; framework es una base de trabajo para construir; base de datos es almacenamiento consultable. El navegador no puede ser el único guardián de un cupo. Una aplicación integrada evita separar servicios sin necesidad. Verificá compatibilidad y costos actuales antes de implementar o contratar.
-
-**Ejemplo:** Al tocar Reservar, la pantalla pide al servidor una operación; este comprueba quién sos y guarda una reserva válida en una transacción; la pantalla muestra el resultado. El servidor verifica siempre, aunque el botón parezca habilitado.
-
-**Pregunta al grupo:** Si alguien modifica el botón en su navegador, ¿qué pieza sigue protegiendo el último cupo?
-
-**Transición:** Una propuesta entendible también debe mostrar los compromisos de elegirla.
-
-**Idea clave:** Ejemplo: Next.js + PostgreSQL. Es una propuesta para este caso, no una receta universal.
-
-- [Next.js · documentación](https://nextjs.org/docs)
-- [PostgreSQL · transacciones](https://www.postgresql.org/docs/current/tutorial-transactions.html)
-
-## 20 · Recomendación, explicación y límite.
-
-El agente recomienda una opción principal, muestra una alternativa relevante y explica qué necesidad haría cambiar de decisión.
-
-**Explicación:** No-tecnico debe explicar también qué no hace falta: microservicios, una app nativa o IA dentro del producto no se justifican solo porque se pueda construirlos. El costo incluye uso, mantenimiento, copias de seguridad y dependencia del proveedor. Los precios se verifican antes de decidir.
-
-**Ejemplo:** Si solo queremos coordinar tutorías estándar, adaptar una herramienta existente puede ser más sencillo. Si necesitamos reglas propias y evidencia para practicar SDD, construir una app pequeña cumple el objetivo educativo.
-
-**Pregunta al grupo:** ¿Qué tendría que cambiar en la necesidad para justificar otra solución?
-
-**Transición:** Pasemos de decisiones a un incremento que se pueda mostrar.
-
-**Idea clave:** Elegí por necesidades, mantenimiento y costo total; no por popularidad.
-
-
-
-## 21 · Un comportamiento completo primero.
-
-Un ticket vertical atraviesa las capas necesarias para entregar un resultado. No requiere construir toda una capa antes de ver valor.
-
-**Explicación:** Un ticket puede atravesar muchas capas y seguir siendo pequeño si resuelve una sola conducta. Incluí dependencias y cómo verificarlo. Si infraestructura mínima es necesaria, hacela explícita y conectala con el primer comportamiento.
-
-**Ejemplo:** Primero reservar, después evitar conflictos más complejos y luego cancelar. Cada ticket conserva criterios identificables; no se posponen todos los tests hasta el final.
-
-**Pregunta al grupo:** ¿Qué podría demostrar el alumno al terminar un ticket llamado “crear todas las tablas”?
-
-**Transición:** Empezamos la demo con el pedido que todavía necesita decisiones.
-
-**Idea clave:** “Reservar un turno” muestra valor antes que “hacer todo el frontend”.
-
-
-
-## 22 · “Quiero que reserven sin escribirme.”
-
-La petición describe un problema real. La conversación lo convierte en reglas que el docente puede revisar y el agente puede construir.
-
-**Explicación:** Mostrá el prompt inicial y usá no-tecnico con grill-with-docs. Marcá el paso de conversación a decisiones sin fingir que las reglas surgieron automáticamente de la petición. La precisión del límite de dos horas evita una discusión posterior sobre “antes de”.
-
-**Ejemplo:** Fijá la hora del servidor para verificar el límite. Guardar fechas con referencia temporal y presentarlas en la zona correcta es parte del plan, no algo que el alumno necesite programar.
-
-**Pregunta al grupo:** ¿Quién puede cambiar un horario que ya tiene una reserva? Dejalo fuera del incremento inicial si no se resolvió.
-
-**Transición:** Ahora relacionamos cada decisión con su criterio y su evidencia.
-
-**Idea clave:** Estas son decisiones del ejercicio; en un proyecto real se acuerdan con su responsable.
-
-
-
-## 23 · Del acuerdo a la evidencia.
-
-Los identificadores conectan la regla, el trabajo y la comprobación. Sirven para encontrar qué revisar cuando el producto cambia.
-
-**Explicación:** No hace falta burocracia: R1, A2 y T2 son enlaces que ahorran búsquedas. Mostrá la diferencia entre escribir “pruebas OK” y adjuntar un resultado con escenario, entorno y fecha. El paquete contiene artefactos de ejemplo; no demuestra una app de reservas ya implementada.
-
-**Ejemplo:** Al aumentar el cupo a dos, buscamos R1 y encontramos A2 y T2 para actualizar su significado y sus pruebas.
-
-**Pregunta al grupo:** ¿Qué evidencia faltaría si solo vemos que el botón cambia a verde?
-
-**Transición:** Los bordes de una regla merecen una comprobación propia.
-
-**Idea clave:** Un test aprobado sirve cuando comprueba el criterio que realmente acordamos.
-
-
-
-## 24 · El límite exacto también es producto.
-
-Para una tutoría a las 18:00, la regla v1 permite cancelar si faltan al menos dos horas. La hora válida se evalúa en el servidor.
-
-**Explicación:** Usá una hora controlada para que las pruebas no dependan del reloj real. Definí los intervalos superpuestos como inicio incluido y fin excluido para que dos tutorías consecutivas no choquen. El agente debe explicar esas convenciones mediante ejemplos cotidianos.
-
-**Ejemplo:** Un turno de 18:00 a 18:30 y otro de 18:30 a 19:00 son consecutivos. Un turno de 18:15 a 18:45 se superpone con ambos.
-
-**Pregunta al grupo:** ¿Qué debería pasar si la persona toca Cancelar dos veces o pierde conexión después de confirmar?
-
-**Transición:** Ahora cambiemos deliberadamente una regla y veamos el efecto.
-
-**Idea clave:** También hay que verificar permisos, doble clic, recarga y fallos de conexión.
-
-
-
-## 25 · Cambió la regla. Seguimos el impacto.
-
-El docente quiere permitir cancelaciones tardías antes del inicio y marcarlas para seguimiento. Actualizamos el acuerdo y sus criterios antes de construir el cambio.
-
-**Explicación:** Explicá el cambio con tres intervalos: al menos dos horas, normal; entre cero y menos de dos horas, tardía; al inicio o después, bloqueada. El registro no se borra. La regla v2 agrega una marca, pero no inventa sanciones o mensajes automáticos.
-
-**Ejemplo:** A las 16:01 para las 18:00, antes bloqueábamos. Ahora se cancela, el turno se libera y el docente puede distinguir que fue tardía. Una prueba anterior debe cambiar porque cambió la intención.
-
-**Pregunta al grupo:** ¿Qué criterio deja de ser correcto aunque antes su prueba estuviera en verde?
-
-**Transición:** Terminamos comparando el resultado contra la versión correcta del contrato.
-
-**Idea clave:** Spec → impacto en tickets y plan → pruebas → código → evidencia actualizada.
-
-
-
-## 26 · Funciona. ¿Cumple lo acordado?
-
-La calidad técnica y la aceptación del producto responden preguntas diferentes. Necesitamos ambas y debemos señalar lo que todavía no se probó.
-
-**Explicación:** No basta con la frase “todos los tests pasan”. Los tests pueden representar una regla vieja. Revisá también lectura, estados vacíos, errores, navegación con teclado y funcionamiento en móvil cuando corresponda al producto.
-
-**Ejemplo:** La prueba técnica podría guardar cancelacion_tardia correctamente mientras la pantalla muestra “reserva activa”. La aceptación detecta esa incoherencia.
-
-**Pregunta al grupo:** ¿Qué necesitarían ver para confiar en que una reserva no se pierde?
-
-**Transición:** Identifiquemos los hábitos que suelen romper este método.
-
-**Idea clave:** La persona valida la experiencia; el agente aporta evidencia, no solo confianza.
-
-
-
-## 27 · El método también necesita criterio.
-
-La especificación puede estar equivocada o desactualizada. La disciplina consiste en hacer visibles esas diferencias y resolverlas.
-
-**Explicación:** Invitá a corregir la spec cuando el grupo descubra una mejor regla. No defiendas un documento por haberlo escrito con mucho esfuerzo. Tampoco vuelvas cualquier cambio mínimo un proyecto documental completo.
-
-**Ejemplo:** Si nadie puede explicar por qué hay microservicios en una app de veinte alumnos, falta una razón que los conecte con una necesidad real.
-
-**Pregunta al grupo:** ¿Cuál de estos errores les parece más fácil cometer al trabajar rápido con IA?
-
-**Transición:** La práctica final sirve para comprobar si pueden aplicar el ciclo sin repetir definiciones.
-
-**Idea clave:** Una buena spec hace el desacuerdo discutible; no elimina la necesidad de pensar.
-
-
-
-## 28 · Tu turno: especificá antes de pedir.
-
-Elegí un problema pequeño y usá no-tecnico para convertirlo en un comportamiento verificable. No necesitás empezar por una tecnología.
-
-**Explicación:** La clase base reserva diez minutos para esta práctica y cinco para revisión y cierre. Para una sesión de 120 minutos, agregá veinte de implementación. Si el grupo necesita más ayuda, usá el caso común de tutorías y variá una sola regla.
-
-**Ejemplo:** Entrega mínima: usuario y problema, tres criterios observables, una exclusión, una propuesta técnica con motivo y el primer ticket. No se evalúa recordar nombres de frameworks.
-
-**Pregunta al grupo:** ¿Puede otra persona revisar tus tres criterios sin preguntarte qué querías decir?
-
-**Transición:** Dejamos los materiales preparados para continuar después de la clase.
-
-**Idea clave:** Extensión de 20 minutos: construir el ticket y mostrar evidencia contra un criterio.
-
-
-
-## 29 · Llevate el método. Y los archivos.
-
-El kit reúne las nueve skills del flujo, no-tecnico, una guía de inicio y un caso completo de especificación y cambio. Las skills originales conservan versión y licencia.
-
-**Explicación:** Descargá el kit desde el botón Materiales. Las skills se incluyen como archivos legibles, no como un instalador opaco. La guía explica cómo copiarlas sin pisar skills existentes. No prometas que una sintaxis con barra es idéntica en todos los agentes.
-
-**Ejemplo:** En Codex se puede invocar $no-tecnico; en un agente con comandos de skills puede aparecer /no-tecnico. Si no hay descubrimiento automático, pedí leer el SKILL.md por su ruta.
-
-**Pregunta al grupo:** ¿Qué archivo revisarías primero al retomar tu idea mañana?
-
-**Transición:** Cerramos con la responsabilidad que permanece aunque el agente construya cada vez más.
-
-**Idea clave:** El ejemplo contiene documentos de trabajo; la aplicación se construye durante la práctica.
-
-- [Skills originales · Matt Pocock](https://github.com/mattpocock/skills)
-- [Skills en Codex](https://learn.chatgpt.com/docs/build-skills)
-- [Clase de referencia · MoureDev](https://www.youtube.com/live/5HaOxAAA5qI)
-
-## 30 · El modelo es motor. La spec, contrato. El criterio es tuyo.
-
-No necesitás conocer cada detalle técnico. Sí entender el problema, las decisiones que aceptás y la evidencia de que se construyó lo acordado.
-
-**Explicación:** Recuperá la pregunta inicial y pedí que cada alumno nombre una decisión que antes habría delegado sin entender. El objetivo no es volverlos arquitectos en una clase: es que puedan conversar, revisar y aprender mientras construyen.
-
-**Ejemplo:** “No sé programar una transacción, pero entiendo por qué dos alumnos no pueden recibir el mismo cupo y sé qué evidencia pedir”. Ese es un resultado válido de esta clase.
-
-**Pregunta al grupo:** ¿Cuál es la primera regla que vas a aclarar en tu próximo proyecto?
-
-**Transición:** Entregá el kit y dejá una invitación concreta: traer una spec pequeña con tres criterios comprobables.
-
-**Idea clave:** Construir con IA también es aprender a hacer mejores preguntas.
-
-
